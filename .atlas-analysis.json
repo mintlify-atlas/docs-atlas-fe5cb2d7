@@ -1,0 +1,154 @@
+{
+  "projectType": "infrastructure",
+  "projectName": "Renegade",
+  "projectDescription": "On-chain dark pool using MPC for anonymous trading at midpoint prices",
+  "theme": "aspen",
+  "primaryColor": "#3B4FE8",
+  "lightColor": "#6B7FFF",
+  "darkColor": "#1E2D7A",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/architecture",
+              "concepts/mpc-protocol",
+              "concepts/zero-knowledge-proofs",
+              "concepts/relayer-clusters",
+              "concepts/matching-engine",
+              "concepts/privacy-model"
+            ]
+          },
+          {
+            "group": "Deployment",
+            "pages": [
+              "deployment/setup",
+              "deployment/configuration",
+              "deployment/docker",
+              "deployment/cluster-setup"
+            ]
+          },
+          {
+            "group": "Operations",
+            "pages": [
+              "operations/running-a-relayer",
+              "operations/monitoring",
+              "operations/troubleshooting"
+            ]
+          },
+          {
+            "group": "Architecture",
+            "pages": [
+              "architecture/overview",
+              "architecture/workers",
+              "architecture/networking",
+              "architecture/state-management",
+              "architecture/cryptography"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "api/overview",
+              "api/authentication"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api/account",
+              "api/orders",
+              "api/balances",
+              "api/tasks",
+              "api/external-matches",
+              "api/markets",
+              "api/metadata",
+              "api/admin"
+            ]
+          },
+          {
+            "group": "WebSocket API",
+            "pages": [
+              "api/websocket"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Circuits",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "circuits/introduction"
+            ]
+          },
+          {
+            "group": "ZK Circuits",
+            "pages": [
+              "circuits/zk/valid-wallet-create",
+              "circuits/zk/valid-deposit",
+              "circuits/zk/valid-withdrawal",
+              "circuits/zk/valid-order-cancellation",
+              "circuits/zk/settlement-proofs",
+              "circuits/zk/fee-proofs"
+            ]
+          },
+          {
+            "group": "MPC Circuits",
+            "pages": [
+              "circuits/mpc/valid-match-mpc"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "MPC-based anonymous order matching",
+    "Zero-knowledge proof system for trade privacy",
+    "P2P gossip network for order dissemination",
+    "Fail-stop fault-tolerant relayer clusters",
+    "On-chain settlement with privacy guarantees",
+    "Midpoint price execution",
+    "RESTful and WebSocket APIs",
+    "Smart contract integration"
+  ],
+  "publicApiSurface": [
+    "POST /v2/account - Create account",
+    "GET /v2/account/{account_id}/seeds - Get account seeds",
+    "POST /v2/account/{account_id}/sync - Sync account state",
+    "GET /v2/account/{account_id}/orders - List orders",
+    "POST /v2/account/{account_id}/orders - Create order",
+    "GET /v2/account/{account_id}/orders/{order_id} - Get order",
+    "POST /v2/account/{account_id}/orders/{order_id}/update - Update order",
+    "POST /v2/account/{account_id}/orders/{order_id}/cancel - Cancel order",
+    "GET /v2/account/{account_id}/balances - Get balances",
+    "GET /v2/account/{account_id}/balances/{mint} - Get balance by mint",
+    "POST /v2/account/{account_id}/balances/{mint}/deposit - Deposit funds",
+    "POST /v2/account/{account_id}/balances/{mint}/withdraw - Withdraw funds",
+    "GET /v2/account/{account_id}/tasks - List tasks",
+    "GET /v2/account/{account_id}/tasks/{task_id} - Get task status",
+    "POST /v2/external-matches - Submit external match",
+    "GET /v2/markets - Get available markets",
+    "GET /v2/markets/depth - Get market depth",
+    "GET /v2/metadata - Get relayer metadata",
+    "GET /v2/network/topology - Get network topology",
+    "WebSocket /v2/account/{account_id}/ws - Real-time updates"
+  ]
+}
